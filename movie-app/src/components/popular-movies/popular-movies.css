@@ -1,0 +1,33 @@
+.movie-page {
+  margin-bottom: 1.5rem;
+}
+.popular-header {
+  color: #023e8a;
+  font-size: 2.1rem;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.popular-movies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+}
+.genres {
+  margin-top: 0.3rem;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.pagination {
+  justify-content: center;
+}
+.page-item.active .page-link {
+  background-color: #a8dadc;
+}
+.page-link {
+  background-color: #457b9d;
+}
+.page-item.disabled .page-link {
+  background-color: #1d3557;
+}

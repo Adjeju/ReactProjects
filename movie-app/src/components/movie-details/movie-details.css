@@ -1,0 +1,38 @@
+.movie-detalis {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 0;
+  justify-content: center;
+  align-items: stretch;
+  background-color: rgb(0, 0, 0, 0.6);
+}
+.movie-details-poster {
+  padding: 2rem;
+}
+.poster {
+  width: 330px;
+  border: 2px solid whitesmoke;
+  border-radius: 1.3rem;
+}
+.movie-details-info {
+  align-self: center;
+  margin-bottom: 1.5rem;
+  line-height: 35px;
+}
+.genre-pill-alt {
+  font-size: 1rem;
+  background: #fff;
+  color: #1d3557;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.25rem;
+  margin: 0.15rem;
+}
+.tagline {
+  font-style: italic;
+}
+.fc-white {
+  color: #fff;
+}
+.movie-detalis-bg-image {
+  background-size: cover;
+}
