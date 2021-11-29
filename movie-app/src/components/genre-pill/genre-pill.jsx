@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './genre-pill.css';
 
@@ -15,3 +16,8 @@ const GenrePill = ({ genres, genreIds }) => {
 };
 
 export default GenrePill;
+
+GenrePill.propTypes = {
+  genres: PropTypes.array,
+  genreIds: PropTypes.array,
+};

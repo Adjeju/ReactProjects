@@ -1,0 +1,17 @@
+.like-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  font-size: 1.7rem;
+}
+
+.like-button-green {
+  color: green;
+}
+
+.like-button-red {
+  color: red;
+}

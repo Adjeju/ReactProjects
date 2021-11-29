@@ -26,6 +26,9 @@ const initialState = {
     currentPage: 1,
     error: null,
   },
+  favouriteMovies: {
+    favourites: [],
+  },
 };
 
 const reducer = (state = initialState, { type, payload }) => {
@@ -173,6 +176,22 @@ const reducer = (state = initialState, { type, payload }) => {
         searchedMovies: {
           ...state.searchedMovies,
           currentPage: payload,
+        },
+      };
+    case 'ADD_MOVIE_TO_FAVOURITES':
+      return {
+        ...state,
+        favouriteMovies: {
+          favourites: [...state.favouriteMovies.favourites, payload],
+        },
+      };
+    case 'REMOVE_MOVIE_FROM_FAVOURITES':
+      return {
+        ...state,
+        favouriteMovies: {
+          favourites: state.favouriteMovies.favourites.filter(
+            ({ id }) => id !== payload
+          ),
         },
       };
     default:

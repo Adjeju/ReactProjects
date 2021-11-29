@@ -7,6 +7,7 @@ import {
 } from '../../actions';
 import PopularMovieCard from '../popular-movie-card';
 import Pagination from 'react-js-pagination';
+import PropTypes from 'prop-types';
 
 import './searched-movies.css';
 
@@ -49,6 +50,10 @@ const SearchedMovies = ({ querry }) => {
       </div>
     </div>
   );
+};
+
+SearchedMovies.propTypes = {
+  querry: PropTypes.string,
 };
 
 export default SearchedMovies;

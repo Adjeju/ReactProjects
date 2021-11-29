@@ -1,16 +1,24 @@
 import React from 'react';
-import GenrePill from '../genre-pill';
-import ratingBG from '../../utils/ratingBG';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
+
+import GenrePill from '../genre-pill';
+import ratingBG from '../../utils/ratingBG';
+import LikeButton from '../like-button';
+
+import PropTypes from 'prop-types';
 
 import './popular-movie-card.css';
 
 const PopularMovieCard = ({ movie, genres }) => {
   const history = useHistory();
+
   const { posterPath, originalTitle, releaseDate, voteAverage, id, genreIds } =
     movie;
-  const imgPath = `https://image.tmdb.org/t/p/w500${posterPath}`;
+
+  const imgPath = posterPath
+    ? `https://image.tmdb.org/t/p/w500${posterPath}`
+    : `https://kritka.info/uploads/posts/no_poster.jpg`;
 
   return (
     <div className="movie-card card">
@@ -34,11 +42,16 @@ const PopularMovieCard = ({ movie, genres }) => {
         </div>
         <div className="movie-card-footer">
           <span className="date">{releaseDate}</span>
-          <button className="like-button btn">like</button>
+          <LikeButton movie={movie} />
         </div>
       </div>
     </div>
   );
+};
+
+PopularMovieCard.propTypes = {
+  movie: PropTypes.object,
+  genres: PropTypes.array,
 };
 
 export default PopularMovieCard;

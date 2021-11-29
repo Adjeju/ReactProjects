@@ -114,6 +114,20 @@ const setSearchedPage = (page) => {
   };
 };
 
+const addMovieToFavourites = (movie) => {
+  return {
+    type: 'ADD_MOVIE_TO_FAVOURITES',
+    payload: movie,
+  };
+};
+
+const removeMovieFromFavourites = (movieId) => {
+  return {
+    type: 'REMOVE_MOVIE_FROM_FAVOURITES',
+    payload: movieId,
+  };
+};
+
 const fetchPopularMovies = (page) => (dispatch) => {
   dispatch(moviesRequested());
   movieService
@@ -162,4 +176,6 @@ export {
   fetchRecomendations,
   fetchSearchedMovies,
   setSearchedPage,
+  removeMovieFromFavourites,
+  addMovieToFavourites,
 };

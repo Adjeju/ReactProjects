@@ -1,0 +1,29 @@
+.favourite-movie-card {
+  background-position: 50%;
+  background-size: cover;
+  border-radius: 10px;
+  position: relative;
+}
+.favourite-movie-card-content {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.favourite-movie-card-content-title {
+  text-align: center;
+  color: white;
+  padding: 70px 15px;
+}
+.decoration-none {
+  text-decoration: none;
+}
+.delete-icon {
+  position: absolute;
+  background: transparent;
+  font-size: 1.3rem;
+  color: white;
+  border: none;
+  right: 10px;
+  top: 5px;
+}

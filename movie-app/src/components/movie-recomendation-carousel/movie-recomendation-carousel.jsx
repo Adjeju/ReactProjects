@@ -3,6 +3,7 @@ import Carousel from 'react-multi-carousel';
 import PopularMovieCard from '../popular-movie-card';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchGenres, fetchRecomendations } from '../../actions';
+import PropTypes from 'prop-types';
 
 import './movie-recomendation-carousel.css';
 import 'react-multi-carousel/lib/styles.css';
@@ -54,13 +55,17 @@ const MovieRecomendationCarousel = ({ id }) => {
         swipeable
       >
         {recomendation.map((movie) => (
-          <div style={{ padding: '0 5px' }}>
-            <PopularMovieCard movie={movie} genres={genres} key={movie.id} />
+          <div style={{ padding: '0 5px' }} key={movie.id}>
+            <PopularMovieCard movie={movie} genres={genres} />
           </div>
         ))}
       </Carousel>
     </div>
   );
+};
+
+MovieRecomendationCarousel.propTypes = {
+  id: PropTypes.number,
 };
 
 export default MovieRecomendationCarousel;

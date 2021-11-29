@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovieDetails } from '../../actions';
+import LikeButton from '../like-button';
+import PropTypes from 'prop-types';
+
 import './movie-details.css';
 
 const MovieDetails = ({ id }) => {
@@ -50,14 +53,18 @@ const MovieDetails = ({ id }) => {
           </div>
           <p className="fc-white">{overview}</p>
           <p className="fc-white">Date of release: {releaseDate}</p>
-          <p className="fc-white ">Rating: {voteAvarage}</p>
+          <p className="fc-white">Rating: {voteAvarage}</p>
           <div>
-            <button className="btn like-button">Like</button>
+            <LikeButton movie={details} />
           </div>
         </div>
       </div>
     </div>
   );
+};
+
+MovieDetails.propTypes = {
+  id: PropTypes.number,
 };
 
 export default MovieDetails;

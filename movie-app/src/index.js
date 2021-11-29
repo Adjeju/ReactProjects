@@ -4,13 +4,16 @@ import App from './components/app';
 import ErrorBoundry from './components/error-boundry';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './store';
+import { store, persistor } from './store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.render(
   <Provider store={store}>
     <ErrorBoundry>
       <Router>
-        <App />
+        <PersistGate persistor={persistor}>
+          <App />
+        </PersistGate>
       </Router>
     </ErrorBoundry>
   </Provider>,

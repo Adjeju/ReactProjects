@@ -1,7 +1,19 @@
 import { reducer } from './reducer';
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['favouriteMovies'],
+};
 
-export default store;
+const persistedReducer = persistReducer(persistConfig, reducer);
+
+const store = createStore(persistedReducer, applyMiddleware(thunk));
+
+const persistor = persistStore(store);
+
+export { store, persistor };
